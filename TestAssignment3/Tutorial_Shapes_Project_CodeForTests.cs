@@ -5,6 +5,9 @@ namespace Tut2_s20123_Tests
     public class Tests
     {
         private readonly IShape sphere = new Sphere(5);
+        private readonly IShape cylinder = new Cylinder(5, 5);
+        private readonly IShape rectangle = new Rectangle(5, 5);
+        private readonly IShape cube = new Cube(5);
 
         [Test]
         public void TestSphereCalculateArea()
@@ -17,8 +20,44 @@ namespace Tut2_s20123_Tests
         {
             Assert.That(sphere.CalculateVolume(), Is.EqualTo(523.598).Within(0.001));
         }
+        
+        [Test]
+        public void TestCylinderCalculateArea()
+        {
+            Assert.That(cylinder.CalculateArea(), Is.EqualTo(314.159).Within(0.001));
+        }
+        
+        [Test]
+        public void TestCylinderCalculateVolume()
+        {
+            Assert.That(cylinder.CalculateVolume(), Is.EqualTo(392.7).Within(0.001));
+        }
+        
+        [Test]
+        public void TestRectangleCalculateArea()
+        {
+            Assert.That(rectangle.CalculateArea(), Is.EqualTo(25));
+        }
+        
+        [Test]
+        public void TestRectangleCalculateVolume()
+        {
+            Assert.That(rectangle.CalculateVolume(), Is.EqualTo(0));
+        }
+        
+        [Test]
+        public void TestCubeCalculateArea()
+        {
+            Assert.That(cube.CalculateArea(), Is.EqualTo(150));
+        }
+        
+        [Test]
+        public void TestCubeCalculateVolume()
+        {
+            Assert.That(cube.CalculateVolume(), Is.EqualTo(125));
+        }
 
-        //todo : Complete the remaning tests here
+        
 
     }
 }
